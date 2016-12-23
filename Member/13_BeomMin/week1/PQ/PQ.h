@@ -6,6 +6,25 @@
 #define FRONT P->front
 #define SIZE P->size
 #define BACK P->back
+#define MakeEntry(x) \
+	entry* x = malloc(sizeof(entry));\
+	x->key = k;\
+	x->data = d;\
+	x->next = NULL;\
+
+#define MIN(x) \
+	entry* x = malloc(sizeof(entry));\
+	KEY k;\
+	DATA d;\
+	\
+	if (isEmpty()) {\
+		puts("empty");\
+		exit(1);\
+	}\
+	x = FRONT;\
+	k = x->key;\
+	d = x->data;\
+
 
 typedef enum boolean {false, true} boolean;
 

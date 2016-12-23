@@ -7,10 +7,7 @@ void init_PQ(){
 }
 
 void insert(KEY k, DATA d) {
-	entry* e = malloc(sizeof(entry));
-	e->key = k;
-	e->data = d;
-	e->next = NULL;
+	MakeEntry(e);
 	
 	if(isEmpty()) {
 		FRONT = e;
@@ -30,33 +27,13 @@ void insert(KEY k, DATA d) {
 }
 
 entry* min(){
-	entry* temp = malloc(sizeof(entry));
-	KEY k;
-	DATA d;
-	
-	if (isEmpty()) {
-		puts("empty");
-		exit(1);
-	}
-	temp = FRONT;
-	k = temp->key;
-	d = temp->data;
+	MIN(temp)
 	printf("min : (%d, %c)\n", k, d);
 	return temp;
 }
 
 entry* removeMin(){
-	entry* temp = malloc(sizeof(entry));
-	KEY k;
-	DATA d;
-	
-	if(isEmpty()) {
-		puts("empty");
-		exit(1);
-	}
-	temp = FRONT;
-	k = temp->key;
-	d = temp->data;
+	MIN(temp)
 	printf("remove : (%d, %c)\n", k, d);
 	FRONT = temp->next;
 	free(temp);
