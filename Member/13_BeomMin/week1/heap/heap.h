@@ -5,7 +5,7 @@
 #define DATA char
 
 #define ROOT H->root
-#define SIZE H->sizei
+#define SIZE H->size
 #define LEFT(x) x->left
 #define RIGHT(x) x->right
 #define PARENT(x) x->parent
@@ -39,3 +39,4 @@ void init_heap();
 void insert(KEY, DATA);
 entry* min();
 entry* removeMin();
+void print_heap(entry*);

@@ -8,11 +8,11 @@ void init_heap() {
 
 void insert(KEY k, DATA d) {
 	MakeEntry(e,k,d)
-	if(isEmpty()) {
+	if(SIZE == 0) {
 		ROOT = e;
 	}
 	else {
-		MakeEntry(temp,NULL,NULL)
+		MakeEntry(temp,0,0)
 		temp = ROOT;
 		while(1){
 			if(LEFT(temp) == NULL) {
@@ -20,7 +20,7 @@ void insert(KEY k, DATA d) {
 				LEFT(temp) = e;
 				break;
 			}
-			else if(RIGHT(temp == NULL)) {
+			else if(RIGHT(temp) == NULL) {
 				PARENT(e) = temp;
 				RIGHT(temp) = e;
 				break;
@@ -29,7 +29,7 @@ void insert(KEY k, DATA d) {
 				temp = LEFT(temp);
 			}
 		}
-		MakeEntry(p,NULL,NULL)
+		MakeEntry(p,0,0)
 		p = PARENT(e);
 		while(p->key > e->key) {
 			PARENT(e) = PARENT(p);
@@ -41,6 +41,7 @@ void insert(KEY k, DATA d) {
 			}
 			if(e == LEFT(p)) {
 				LEFT(e) = p;
+			}
 			else {
 				RIGHT(e) = p;
 			}
@@ -51,16 +52,16 @@ void insert(KEY k, DATA d) {
 }
 
 entry* min(){
-	if(isEmpty()){
+	if(SIZE == 0){
 		puts("empty");
 		exit(1);
 	}
-	MakeEntry(temp,NULL,NULL)
+	MakeEntry(temp,0,0)
 	temp = ROOT;
 	printf("min : (%d, %c)\n", temp->key, temp->data);
 	return temp;
 }
-
+/*
 entry* removeMin() {
 	if(isEmpty()) {
 		puts("empty");
@@ -104,8 +105,29 @@ entry* removeMin() {
 	
 	MakeEntry(bub,NULL,NULL)
 	bub = ROOT;
-	while(bub->key > LEFT(bub) || bub->key > RIGHT(bub)) {
-		if(bub->key > LEFT(bub)->key) {
-			
+	while(LEFT(bub) != NULL) {
+		if(RIGHT(bub) != NULL) {
+			if(bub->key > LEFT(bub)->key && bub->key > RIGHT(bub)) {
+				if(LEFT(bub)->key < RIGHT(bub)->key) {
+					if(RIGHT(LEFT(bub)) != NULL) {
+						PARENT(RIGHT(LEFT(bub))) = bub;
+						PARENT(LEFT(LEFT(bub)))	= bub;
+						RIGHT(LEFT(bub)) = RIGHT(bub);
+						LEFT(LEFT(bub)) = bub;
+						if(bub == ROOT) {
+							PARENT(LEFT(bub)) = NULL;
+						}
+							
 		
+*/
 
+void print_heap(entry* e) {
+	if(LEFT(e) != NULL) {
+		print_heap(LEFT(e));
+	}
+	printf("(%d, %c) ", e->key, e->data);
+	if(RIGHT(e) != NULL) {
+		print_heap(RIGHT(e));
+	}
+}
+	
