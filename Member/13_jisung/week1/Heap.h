@@ -3,6 +3,8 @@
 #define parIDX(x) ((x-1)/2)
 #define L_IDX(x) (x*2+1)
 #define R_IDX(x) (x*2+2)
+#define HEAP(x) heap->con[x]
+#define HEAP_key(x) heap->con[x]->key //부적절함
 
 typedef enum{false,true} boolean;
 typedef int Key;
@@ -18,6 +20,8 @@ typedef struct heap{
   int lastIDX;
 }heap;
 void heapInit(heap*);
+void heapInsert(Heap *heap,Entry e);
+Entry heapDelete(HEAP*);
 void swap(Entry*,Entry*);
-void upheap(Entry*);
-void downheap(Entry*);
+void upheap(Heap*,int);
+void downheap(Heap*,int);
