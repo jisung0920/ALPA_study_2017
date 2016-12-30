@@ -1,9 +1,4 @@
-#include "Heap.h"
-
-typedef struct PQ{
-	int size;
-	Heap que;
-}PQ;
+#include "PQ.h"
 
 void PQInit(PQ* p){
   p->size =0;

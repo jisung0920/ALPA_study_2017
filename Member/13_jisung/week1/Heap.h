@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 #define MAX  100
 #define parIDX(x) ((x-1)/2)
 #define L_IDX(x) (x*2+1)
 #define R_IDX(x) (x*2+2)
 #define HEAP(x) heap->con[x]
-#define HEAP_key(x) heap->con[x]->key //부적절함
+#define H_key(x) heap->con[x].key //부적절함
 
 typedef enum{false,true} boolean;
 typedef int Key;
@@ -18,10 +19,10 @@ typedef struct entry{
 typedef struct heap{
   Entry con[MAX];
   int lastIDX;
-}heap;
-void heapInit(heap*);
+}Heap;
+void heapInit(Heap*);
 void heapInsert(Heap *heap,Entry e);
-Entry heapDelete(HEAP*);
+Entry heapDelete(Heap*);
 void swap(Entry*,Entry*);
 void upheap(Heap*,int);
 void downheap(Heap*,int);

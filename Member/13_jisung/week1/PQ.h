@@ -2,7 +2,7 @@
 
 typedef struct PQ{
 	int size;
-	Heap queue;
+	Heap *que;
 }PQ;
 
 void PQInit(PQ*);
