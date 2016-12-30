@@ -6,8 +6,9 @@ typedef struct PQ{
 }PQ;
 
 void PQInit(PQ*);
-void insert(Key,Data);
+void insert(PQ*,Key,Data);
 Entry min(PQ*);
 Entry removeMin(PQ*);
 int size(PQ*);
 boolean isEmptry(PQ*);
+boolean isFULL(PQ*);
