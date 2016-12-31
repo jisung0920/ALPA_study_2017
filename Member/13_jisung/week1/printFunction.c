@@ -1,7 +1,7 @@
-#include "header.h"
+#include "Header.h"
 
 void printEntry(Entry e){
-  printf("key : %d  - data : %c ",e.key,e.data);
+  printf("[key : %d  - data : %c ]",e.key,e.data);
 }
 
 void printHeap(PQ *p){
@@ -12,8 +12,11 @@ void printHeap(PQ *p){
 
   else{
     for(;i<p->size;i*=2){
-      for(j=i;j<=i*2;j++)
+      for(j=i;j<i*2;j++){
+        if(p->size<j)
+          break;
         printEntry(p->que->con[j-1]);
+      }
       putchar('\n');
     }
   }

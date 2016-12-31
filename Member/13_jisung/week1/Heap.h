@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #define MAX  100
 #define parIDX(x) ((x-1)/2)
 #define L_IDX(x) (x*2+1)

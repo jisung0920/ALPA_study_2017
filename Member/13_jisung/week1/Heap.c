@@ -1,8 +1,6 @@
 #include "Heap.h"
 
 void heapInit(Heap* heap){
-  //heap->con = (Entry*)malloc(MAX*sizeof(Entry));
-  //heap->con = NULL;
   heap->lastIDX= -1;
 }
 
@@ -26,7 +24,7 @@ void swap(Entry *e1,Entry *e2){
 
 void upheap(Heap *heap,int idx){
 
-  if(heap->con[parIDX(idx)]==NULL)//
+  if(parIDX(idx)<0)//
     return ;
 
   if( H_key(idx) < H_key(parIDX(idx)) ){
@@ -38,7 +36,7 @@ void upheap(Heap *heap,int idx){
 void downheap(Heap *heap,int idx){
   int sIDX;
   Key sKey;
-  if(H_key(L_IDX(idx))<H_key(R_IDX(idx)) || HEAP(R_IDX(idx))==NULL ){
+  if(H_key(L_IDX(idx))<H_key(R_IDX(idx)) || (R_IDX(idx)>heap->lastIDX) ){
     sIDX = L_IDX(idx);
     sKey =H_key(sIDX);
   }
