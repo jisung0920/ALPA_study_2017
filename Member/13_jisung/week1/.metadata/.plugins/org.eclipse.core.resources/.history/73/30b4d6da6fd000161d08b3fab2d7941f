@@ -1,0 +1,19 @@
+package week1;
+
+public class KiwiJuiceEasy {
+	
+	public	int[] thePouring(int[] capacities,int[] bottles, int[] fromId, int[] toId){
+	int mJuice = bottles[fromId[0]];
+	int cap = bottles[toId[0]] + mJuice;
+	if(capacities[toId[0]]<cap){
+		bottles[toId[0]]=capacities[toId[0]];
+		bottles[fromId[0]]=cap-capacities[toId[0]];
+	}
+	else{
+		bottles[toId[0]]=cap;
+		bottles[fromId[0]]=0;
+	}
+	return bottles;
+	}
+
+}

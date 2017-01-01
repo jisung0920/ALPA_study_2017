@@ -1,0 +1,18 @@
+package week1;
+
+public class JuiceMain {
+
+	public static void main(String[] args) {
+		KiwiJuiceEasy  Juice = new KiwiJuiceEasy();
+		int capacities[] = {20,20};
+		int bottles[] = {5,8};
+		int fromId[] = {0};
+		int toId[] = {1};
+		Juice.thePouring(capacities, bottles, fromId, toId);
+		for(int i=0;i<bottles.length;i++){
+			System.out.println(bottles[i]);
+		}
+
+	}
+
+}
