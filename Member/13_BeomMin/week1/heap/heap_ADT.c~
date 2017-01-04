@@ -35,66 +35,29 @@ void insert(KEY k, DATA d) {
 
 
 		MakeEntry(p,0,0)
-		MakeEntry(r,0,0)
-		r = e;
 		p = PARENT(e);
 		while(p->key > e->key) {
-			if (p == ROOT) {
-				/*PARENT(LEFT(e)) = p;
-				PARENT(RIGHT(e)) = p;
-				LEFT(p) = LEFT(r);
-				RIGHT(p) = LEFT(r);
-				PARENT(p) = e;
-				PARENT(e) = NULL;*/
-				if (LEFT(p) == e) {
-					PARENT(LEFT(e)) = p;
-					PARENT(RIGHT(e)) = p;
-					PARENT(RIGHT(p)) = e;
-					LEFT(e) = p;
-					RIGHT(e) = RIGHT(p);
-					LEFT(p) = LEFT(r);
-					RIGHT(p) = RIGHT(r);
-					PARENT(p) = e;
-					PARENT(e) = NULL;
+			if(p == ROOT) {
+				if(LEFT(p) == e) {
+					
 				}
-				else {
-					PARENT(LEFT(e)) = p;
-					PARENT(RIGHT(e)) = p;
-					PARENT(LEFT(p)) = e;
-					RIGHT(e) = p;
-					LEFT(e) = LEFT(p);
-					LEFT(p) = LEFT(r);
-					RIGHT(p) = RIGHT(r);
-					PARENT(p) = e;
-					PARENT(e) = NULL;
+				else{
 				}
-				ROOT = e;
+			}
+			PARENT(e) = PARENT(p);
+			if(p == LEFT(PARENT(p))){
+				LEFT(PARENT(p)) = e;
 			}
 			else {
-				if(LEFT(p) == e) {
-					if(LEFT(PARENT(p)) == p) {
-						LEFT(PARENT(p)) = e;
-					}
-					else {
-						RIGHT(PARENT(p)) = e;
-					}
-					PARENT(LEFT(e)) = p;
-					PARENT(RIGHT(e)) = p;
-					PARENT(RIGHT(p)) = e;
-					PARENT(e) = PARENT(p);
-					LEFT(e) = p;
-					RIGHT(e) = RIGHT(p);
-					LEFT(p) = LEFT(r);
-					RIGHT(p) = RIGHT(r);
-					PARENT(p) = e;
-					LEFT(e) = p;
-					RIGHT(e) = RIGHT(p);
-					LEFT(p)
-				}
-				else {
-
-				}
+				RIGHT(PARENT(p)) = e;
 			}
+			if(e == LEFT(p)) {
+				LEFT(e) = p;
+			}
+			else {
+				RIGHT(e) = p;
+			}
+			PARENT(p) = e;
 		}			
 	}
 	SIZE++;
