@@ -16,5 +16,7 @@ public class MainActivity extends AppCompatActivity {
         EditText idText = (EditText) findViewById(R.id.idText);
         EditText passwordText = (EditText) findViewById(R.id.passwordText);
         TextView welcomMessage = (TextView) findViewById(R.id.welcomMessage);
+
+
     }
 }
