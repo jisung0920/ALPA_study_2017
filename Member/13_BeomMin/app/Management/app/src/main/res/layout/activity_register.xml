@@ -60,7 +60,7 @@
         android:id="@+id/ageText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:hint="나이" />
+        android:hint="학번" />
 
     <Button
         android:text="회원가입"

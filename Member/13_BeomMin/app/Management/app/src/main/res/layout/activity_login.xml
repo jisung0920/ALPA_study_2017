@@ -47,12 +47,24 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <TextView
+    <Button
         android:text="회원가입"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/loginbutton"
         android:layout_centerHorizontal="true"
-        android:id="@+id/registerView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        android:id="@+id/registerbutton"
+
+        />
+
+    <CheckBox
+        android:text="CheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerbutton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="16dp"
+        android:id="@+id/AutoLoginCheck"
+        android:hint="AutoLogin" />
 </RelativeLayout>
