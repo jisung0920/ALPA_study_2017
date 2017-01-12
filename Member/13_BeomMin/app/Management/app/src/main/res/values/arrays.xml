@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="studentnumber">
+        <item>20학번</item>
+        <item>19학번</item>
+        <item>18학번</item>
+        <item>17학번</item>
+        <item>16학번</item>
+        <item>15학번</item>
+        <item>14학번</item>
+        <item>13학번</item>
+        <item>12학번</item>
+        <item>11학번</item>
+        <item>10학번</item>
+        <item>09학번</item>
+    </string-array>
+</resources>
