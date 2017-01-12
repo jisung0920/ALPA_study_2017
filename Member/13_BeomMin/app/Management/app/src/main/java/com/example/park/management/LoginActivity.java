@@ -49,12 +49,16 @@ public class LoginActivity extends AppCompatActivity {
             loginChecked = true;
             AutoLoginCheck.setChecked(loginChecked);
         }
-//        else {
-//            String userID = idText.getText().toString();
-//            String userPassword = passwordText.getText().toString();
-//            loginChecked = false;
-//            AutoLoginCheck.setChecked(loginChecked);
-//        }
+        else {
+            String userID = idText.getText().toString();
+            String userPassword = passwordText.getText().toString();
+            loginChecked = false;
+            AutoLoginCheck.setChecked(loginChecked);
+            editor.putString("userID", userID);
+            editor.putString("userPassword", userPassword);
+            editor.putBoolean("AutoLoginCheck", loginChecked);
+
+        }
             /////////////////////////////
             registerButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -69,11 +73,11 @@ public class LoginActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     String userID = idText.getText().toString();
                     String userPassword = passwordText.getText().toString();
-                    loginChecked = false;
-//                    AutoLoginCheck.setChecked(loginChecked);
-                    editor.putString("userID", userID);
-                    editor.putString("userPassword", userPassword);
-                    editor.putBoolean("AutoLoginCheck", loginChecked);
+//                    loginChecked = false;
+////                    AutoLoginCheck.setChecked(loginChecked);
+//                    editor.putString("userID", userID);
+//                    editor.putString("userPassword", userPassword);
+//                    editor.putBoolean("AutoLoginCheck", loginChecked);
 
                     Response.Listener<String> responesListener = new Response.Listener<String>() {
                         @Override
@@ -84,6 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                                 if (success) {
                                     String userID = jsonResponse.getString("userID");
                                     String userPassword = jsonResponse.getString("userPassword");
+
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra("userID", userID);
                                     intent.putExtra("userPassword", userPassword);
