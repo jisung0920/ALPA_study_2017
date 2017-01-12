@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.user.homeinone.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="0ºC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:id="@+id/tempTextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/wheatherButton"
+            android:text="오늘의 날씨 정보  ☞"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:background="@android:color/background_light" />
+
+        <TextView
+            android:text="현재 적용중인 모드입니다."
+            android:layout_width="match_parent"
+            android:id="@+id/modeTextView"
+            android:layout_height="44dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:text="외출모드"
+            android:layout_width="match_parent"
+            android:layout_height="219dp"
+            android:id="@+id/presentModeTextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:paddingTop="0dp"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView4"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+    </LinearLayout>
+</RelativeLayout>
