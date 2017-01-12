@@ -64,7 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 success = false;
                             }
                             else {
-                                if(userPassword == userPassword2) {
+                                if(userPassword.equals(userPassword2)) {
                                     success = true;
                                 }
                                 else {
@@ -72,11 +72,12 @@ public class RegisterActivity extends AppCompatActivity {
                                 }
                             }
                             if(success) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                                    builder.setMessage("회원가입되셨습니다.")
-                                            .setPositiveButton("확인", null)
-                                            .create()
-                                            .show();
+                                Toast.makeText(RegisterActivity.this, "회원가입 되셨습니다.", Toast.LENGTH_SHORT).show();
+//                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+//                                    builder.setMessage("회원가입되셨습니다.")
+//                                            .setPositiveButton("확인", null)
+//                                            .create()
+//                                            .show();
                                 Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                 RegisterActivity.this.startActivity(intent);
                             }

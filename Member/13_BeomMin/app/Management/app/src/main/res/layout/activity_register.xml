@@ -19,7 +19,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/idText"
-        android:hint="아이디" />
+        android:hint="아이디"
+        android:maxLength="15"/>
 
     <EditText
         android:layout_width="wrap_content"
