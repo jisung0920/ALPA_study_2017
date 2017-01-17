@@ -1,0 +1,14 @@
+package Interesting_party;
+
+public class week2Main {
+
+	public static void main(String[] args) {
+		InterestingParty party = new InterestingParty();
+		String first[] = {"fishing","gardening","swimming","fishing"};
+		String second[] = {"hunting","fishing","fishing","biting"};
+		int i=party.bestInvitation(first, second);
+		System.out.println("return : "+i);
+
+	}
+
+}

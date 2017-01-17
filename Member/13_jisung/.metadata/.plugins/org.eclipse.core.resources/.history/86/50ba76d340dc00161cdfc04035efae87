@@ -1,0 +1,19 @@
+package Interesting_party;
+
+public class InterestingParty {
+
+	public int bestInvitation(String[] first, String[] second){
+		int NumPeople = first.length;
+		int topic[]={};
+		int common=0;
+		for(int i=0;i<NumPeople;i++){
+			for(int j=i+1;j<NumPeople;j++)
+				if(first[i]==first[j] || first[i]==second[j])
+					topic[i]++;
+			
+			if(common<topic[i])
+				common=topic[i];
+		}
+		return common;
+	}
+}
