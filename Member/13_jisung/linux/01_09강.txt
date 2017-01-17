@@ -1,0 +1,14 @@
+linus 기본명령어 (linux 기반 모든 환경에서 사용가능하다)
+pwd // 현재 directory 위치 출력
+ls  // 현재 directory의 내용물 출력
+cd /  // 절대 경로
+cd name // 상대 경로
+
+명령어 -help  // 간략한 설명
+man 명령어    // 상세한 설명
+- 는 축약형 -- 는 fullname
+명령어 옵션은 합쳐서 사용할 수 있다(ex -al)
+cp // 복사
+mv // 이동
+sudo // root 권한으로 명령 실행
+nano 에디터 종류
