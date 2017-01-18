@@ -1,0 +1,7 @@
+#Thu Jan 12 00:09:19 KST 2017
+base.0=C\:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_76965356388a3fbadb70773eb7d79228751e316b
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c0698d60005ac033af64eb99ad4e778f155adc5d\\classes.dex
+base.1=C\:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_c0698d60005ac033af64eb99ad4e778f155adc5d
+file.0=C\:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_76965356388a3fbadb70773eb7d79228751e316b\\classes.dex

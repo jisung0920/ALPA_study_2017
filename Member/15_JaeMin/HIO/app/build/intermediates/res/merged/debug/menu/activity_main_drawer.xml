@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="공지사항"
+        android:id="@+id/announcementItem0"
+        android:visible="true">
+        <menu >
+            <item android:title="  - 학회"
+                android:id="@+id/nav_announcement_layout" />
+            <item android:title="  - 학과"
+                android:id="@+id/nav_announcement_layout" />
+            <item android:title="  - 학교"
+                android:id="@+id/nav_announcement_layout" />
+        </menu>
+    </item>
+
+
+    <item android:title="게시판"
+        android:id="@+id/boardItem0"
+        android:visible="true">
+        <menu >
+            <item android:title="  - Tip"
+                android:id="@+id/nav_board_layout" />
+            <item android:title="  - 요청게시판"
+                android:id="@+id/nav_board_layout" />
+            <item android:title="  - 자유게시판"
+                android:id="@+id/nav_board_layout" />
+        </menu>
+    </item>
+
+    <item android:title="갤러리"
+        android:id="@+id/nav_gallary_layout" />
+
+
+    <item android:title="설정"
+        android:id="@+id/nav_setting_layout" />
+
+</menu>
