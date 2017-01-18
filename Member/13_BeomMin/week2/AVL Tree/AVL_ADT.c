@@ -21,8 +21,7 @@ void insert(KEY k, DATA d) {
 			if (K(temp) > K(e)) {
 				if (L(temp) == NULL) {
 					L(temp) = e;
-					P(e) = temp;
-					SetHeight
+		//			P(e) = temp;
 					break;
 				}
 				else {
@@ -32,8 +31,8 @@ void insert(KEY k, DATA d) {
 			else {
 				if (R(temp) == NULL) {
 					R(temp) = e;
-					P(e) = temp;
-					SetHeight
+				//	P(e) = temp;
+				
 					break;
 				}
 				else {
