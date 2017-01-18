@@ -1,5 +1,6 @@
 #include "BST.h"
 
+
 TreeNode * MakeTreeNode(void){
   TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
   return node;
@@ -7,16 +8,14 @@ TreeNode * MakeTreeNode(void){
 Data GetData(TreeNode * bt){
   return bt->data;
 }
-void SetData(TreeNode * bt, Data data);{
+void SetData(TreeNode * bt, Data data){
   bt->data = data;
 }
 
-
-TreeNode * GetLeft(TreeNode * bt){
-  return bt->left;
-}
-TreeNode * GetRight(TreeNode * bt){
-  return bt->right;
+TreeNode* SettingNode(Data data){
+  TreeNode* node=MakeTreeNode();
+  SetData(node, data);
+  return node;
 }
 
 
@@ -29,8 +28,9 @@ ChildState ChildNodeState(TreeNode* bt){
     return One_Left;
   else
     return One_Right;
-
 }
+
+
 void MakeLeftSubTree(TreeNode * main, TreeNode * sub){
   main->left = sub;
 }
@@ -40,29 +40,34 @@ void MakeRightSubTree(TreeNode * main, TreeNode * sub){
 
 
 TreeNode* SearchNode(TreeNode* bt,Data data,Dir *dir){
-  if(bt=NULL)
+  Dir tmp;
+  if(bt==NULL)
     return NULL;
   if(data < GetData(bt)){
-    dir = &Left;
-    SearchNode(GetLeft(bt),data,dir);
+    tmp = Left;
+    dir = &tmp;
+    return SearchNode(GetLeft(bt),data,dir);
   }
   else if(data == GetData(bt))
     return bt;
   else{
-    dir = &Right;
-    SearchNode(GetRight(bt,data,dir));
+    tmp = Right;
+    dir = &tmp;
+    return SearchNode(GetRight(bt),data,dir);
   }
 }
 
-void InsertNode(TreeNode* bt,TreeNode* node,Dir dir){
+void InsertNode(TreeNode* bt,TreeNode* node,Dir dir){//overload
   if(bt==NULL){
     bt = node;
-    if(dir==-1)
+    if(dir==firstD)
       return ;//root node
-    if(dir==Left)//set left
+    if(dir==Left){//set left
       GetLeft(bt->par)=node;
-    else//set right
+    }
+    else{//set right
       GetRight(bt->par)=node;
+    }
   }//setting node
 
   if(GetData(bt)>GetData(node))
@@ -83,7 +88,7 @@ Data DeleteNode(TreeNode* bt,Data data){
   if(node == bt)
     return GetData(bt);
 
-  ChlidState n = ChildNodeState(bt);
+  ChildState n = ChildNodeState(bt);
 
   if(n == Zero){
     if(!(*dir))//par - left

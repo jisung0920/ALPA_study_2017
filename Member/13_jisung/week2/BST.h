@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define GetLeft(x) (x->left)
+#define GetRight(x) (x->right)
 
 typedef int Data;
 typedef enum{false,true} boolean;
-typedef enum{Left,Right} Dir;
+typedef enum{firstD=-1,Left,Right} Dir;
 typedef enum{Zero,One_Left,One_Right,Two} ChildState;
 
 
@@ -18,9 +20,7 @@ typedef struct TreeNode{
 TreeNode * MakeTreeNode(void);
 Data GetData(TreeNode * bt);
 void SetData(TreeNode * bt, Data data);
-
-TreeNode * GetLeft(TreeNode * bt);
-TreeNode * GetRight(TreeNode * bt);
+TreeNode* SettingNode(Data data);
 
 ChildState ChildNodeState(TreeNode* bt);
 
@@ -31,7 +31,7 @@ void printNode(TreeNode* node);
 
 TreeNode* SearchNode(TreeNode* bt,Data data,Dir *dir);
 void InsertNode(TreeNode* bt,TreeNode *node,Dir dir);
-TreeNode* DeleteNode(TreeNode* bt,Data data);
+Data DeleteNode(TreeNode* bt,Data data);
 
 
 void PreorderTraverse(TreeNode * bt);
