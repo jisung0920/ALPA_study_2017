@@ -1,12 +1,13 @@
 
-#include "AVL.h"
+#include "BST.h"
 int main(void){
   TreeNode* root;
-  root = SettingNode(1);
-  TreeNode* a[10];
-  for(int i=0;i<10;i++){
-    a[i]=SettingNode((7*i)%10);
-    InsertNode(root,a[i],-1);
-  }
-  PreorderTraverse(root);
+  InitNode(root);
+  root = NULL;
+  InsertNode(root,MakeTreeNode(3));
+  /*for(int i=0;i<10;i++){
+    InsertNode(root,MakeTreeNode(i*7%10+1));
+  }*/
+ printNode(root);
+ free(root);
 }

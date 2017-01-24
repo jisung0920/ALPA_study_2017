@@ -19,9 +19,10 @@ typedef struct TreeNode{
 
 
 void InitNode(TreeNode *bt);
-TreeNode * MakeTreeNode(Data data);
+TreeNode * MakeTreeNode(void);
 Data GetData(TreeNode * bt);
 void SetData(TreeNode * bt, Data data);
+TreeNode* SettingNode(Data data);
 
 ChildState ChildNodeState(TreeNode* bt);
 
@@ -31,7 +32,7 @@ void MakeRightSubTree(TreeNode * main, TreeNode * sub);
 void printNode(TreeNode* node);
 
 TreeNode* SearchNode(TreeNode* bt,Data data,Dir *dir);
-void InsertNode(TreeNode* bt,TreeNode *node);
+void InsertNode(TreeNode* bt,TreeNode *node,Dir dir);
 Data DeleteNode(TreeNode* bt,Data data);
 
 

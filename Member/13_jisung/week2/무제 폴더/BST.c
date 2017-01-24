@@ -1,16 +1,11 @@
 #include "BST.h"
 
 void InitNode(TreeNode *bt){
-  bt->par = NULL;
-  bt->left = NULL;
-  bt->right = NULL;
-  bt->height = 0;
+  bt = NULL;
 }
 
-TreeNode * MakeTreeNode(Data data){
-  TreeNode* node = malloc(sizeof(TreeNode));
-  InitNode(node);
-  node->data = data;
+TreeNode * MakeTreeNode(void){
+  TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
   return node;
 }
 Data GetData(TreeNode * bt){
@@ -19,6 +14,15 @@ Data GetData(TreeNode * bt){
 void SetData(TreeNode * bt, Data data){
   bt->data = data;
 }
+
+TreeNode* SettingNode(Data data){
+  TreeNode* node=MakeTreeNode();
+  InitNode(node);
+  SetData(node, data);
+  bt->height = 0;
+  return node;
+}
+
 
 ChildState ChildNodeState(TreeNode* bt){
   if(GetLeft(bt)==NULL && GetRight(bt)==NULL)
@@ -58,40 +62,59 @@ TreeNode* SearchNode(TreeNode* bt,Data data,Dir *dir){
   }
 }
 
-void InsertNode(TreeNode* bt,TreeNode* node){//overload
-  TreeNode* tmpNode;
-  if(bt==NULL){
+void InsertNode(TreeNode* bt,TreeNode* node,Dir dir){//overload
+  if(bt==NULL)
     bt = node;
-    return ;
-  }
-  /*
-  tmpNode = bt;
-  TreeNode* parNode;
-  Dir dir;
-  while(tmpNode != NULL){
-    parNode = tmpNode;
-    while(tmpNode->data>node->data){
-      tmpNode= GetLeft(tmpNode);
-      dir =Left;
-    }
-    while(tmpNode->data<node->data){
-      tmpNode = GetRight(tmpNode);
-      dir = Right;
-    }
-  }
-  tmpNode = node;
-  tmpNode->par = parNode;
-  if(dir==Left)
-    GetLeft(parNode) = tmpNode;
-  else
-    GetRight(parNode) = tmpNode;
-    */
 }
 
 
 Data DeleteNode(TreeNode* bt,Data data){
 
-  return data;
+  Dir* dir;
+  Data res;
+  TreeNode* node = SearchNode(bt,data,dir);
+  res = GetData(node);
+  if(node ==NULL)
+    return NULL;
+  if(node == bt)
+    return GetData(bt);
+
+  ChildState n = ChildNodeState(bt);
+
+  if(n == Zero){
+    if(!(*dir))//par - left
+      bt->par->left=NULL;
+    else
+      bt->par->right=NULL;
+  }
+  else if(n == One_Left){
+    if(!(*dir))//par - left
+      GetLeft(bt->par)=GetLeft(bt);
+    else
+      GetRight(bt->par)=GetLeft(bt);
+  }
+  else if(n == One_Right){
+    if(!(*dir))//par - left
+      GetLeft(bt->par)=GetRight(bt);
+    else
+      GetRight(bt->par)=GetRight(bt);
+  }
+  else{
+    TreeNode* cur = GetRight(bt);
+    int count=0;
+    while(cur!=NULL){
+      cur = GetLeft(cur);
+      count=1;
+    }
+    if(count){
+
+    }
+    else{//cur == bt->right
+      ////////////////////////////////
+    }
+  }
+  free(bt);
+  return res;
 }
 
 void printNode(TreeNode* node){
