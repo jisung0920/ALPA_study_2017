@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_general.xml",
+        "source": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\src\\main\\res\\xml\\pref_general.xml"
+    },
+    {
+        "merged": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_headers.xml",
+        "source": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\src\\main\\res\\xml\\pref_headers.xml"
+    },
+    {
+        "merged": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_data_sync.xml",
+        "source": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\src\\main\\res\\xml\\pref_data_sync.xml"
+    },
+    {
+        "merged": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\build\\intermediates\\res\\merged\\debug\\xml\\pref_notification.xml",
+        "source": "C:\\Users\\k\\Documents\\GitHub\\ALPA_study_2017\\Member\\15_JaeMin\\HIO\\app\\src\\main\\res\\xml\\pref_notification.xml"
+    }
+]

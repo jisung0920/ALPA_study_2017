@@ -278,6 +278,7 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.jdt.ui 4 10001 2017-01-17 19:50:35.707
 !MESSAGE Internal Error
@@ -655,6 +656,9 @@ Contains: The project description file (.project) for 'week2_Topcoder' is missin
 !ENTRY org.eclipse.core.resources 2 10035 2017-01-17 19:54:32.090
 !MESSAGE The workspace will exit with unsaved changes in this session.
 !SESSION 2017-01-17 19:58:16.500 -----------------------------------------------
+=======
+!SESSION 2017-01-17 07:49:47.355 -----------------------------------------------
+>>>>>>> f7637c6afa7c89eba215513b8e4d69fd1e3c18f0
 eclipse.buildId=4.6.0.I20160606-1100
 java.version=1.8.0_101
 java.vendor=Oracle Corporation
@@ -662,16 +666,21 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
 Framework arguments:  -product org.eclipse.epp.package.jee.product
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.core.resources 2 10035 2017-01-17 19:58:23.721
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
 
 !ENTRY org.eclipse.egit.ui 2 0 2017-01-17 19:58:38.107
+=======
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-17 07:50:08.419
+>>>>>>> f7637c6afa7c89eba215513b8e4d69fd1e3c18f0
 !MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
 user global configuration and to define the default location to store repositories: 'C:\Users\정지성'. If this is
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.jface.text 2 0 2017-01-17 20:03:26.005
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
 
@@ -682,4 +691,16 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
 
 !ENTRY org.eclipse.jface.text 2 0 2017-01-17 20:04:52.279
+=======
+!ENTRY org.eclipse.jface.text 2 0 2017-01-17 07:51:55.277
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-01-17 07:51:55.277
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-01-17 07:51:55.402
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-01-17 07:51:55.402
+>>>>>>> f7637c6afa7c89eba215513b8e4d69fd1e3c18f0
 !MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'

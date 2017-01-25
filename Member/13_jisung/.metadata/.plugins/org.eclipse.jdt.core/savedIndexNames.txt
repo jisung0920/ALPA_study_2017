@@ -1,3 +1,8 @@
 INDEX VERSION 1.129+C:\Users\Á¤Áö¼º\Documents\GitHub\ALPA_study_2017\Member\13_jisung\.metadata\.plugins\org.eclipse.jdt.core
+<<<<<<< HEAD
 1896882696.index
 2586286347.index
+=======
+2586286347.index
+1896882696.index
+>>>>>>> f7637c6afa7c89eba215513b8e4d69fd1e3c18f0
