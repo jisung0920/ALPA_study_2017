@@ -39,11 +39,12 @@ void MakeLeftSubTree(TreeNode * main, TreeNode * sub){
 void MakeRightSubTree(TreeNode * main, TreeNode * sub){
   main->right = sub;
 }
-void swapNode(TreeNode* A, TreeNode* B){
-  TreeNode tmp;
-  tmp = *A;
-  *A = *B;
-  *B = tmp;
+void swapNodeData(TreeNode* A, TreeNode* B){
+  Data data;
+  data = A->data;
+  A->data = B->data;
+  B->data = data;
+
 }
 
 TreeNode* SearchNode(TreeNode* bt,Data data,Dir *dir){
@@ -51,15 +52,15 @@ TreeNode* SearchNode(TreeNode* bt,Data data,Dir *dir){
   if(bt==NULL)
     return NULL;
   if(data < GetData(bt)){
-    tmp = Left;
-    dir = &tmp;
+    *dir = Left;
+
     return SearchNode(GetLeft(bt),data,dir);
   }
   else if(data == GetData(bt))
     return bt;
   else{
-    tmp = Right;
-    dir = &tmp;
+    *dir = Right;
+
     return SearchNode(GetRight(bt),data,dir);
   }
 }
@@ -95,8 +96,8 @@ void InsertNode(TreeNode* bt,TreeNode* node){//overload
 
 
 Data DeleteNode(TreeNode* bt,Data data){
-  
-  Dir dir;
+
+  Dir dir =Left;
   Data delData;
   TreeNode* delNode = SearchNode(bt,data,&dir);
 
@@ -104,12 +105,6 @@ Data DeleteNode(TreeNode* bt,Data data){
     exit(1);
 
   delData = delNode->data;
-
-  if(delNode == bt){
-    free(bt);
-    return delData;
-  }
-
   TreeNode* parNode = delNode->par;
   TreeNode* repNode;
 
@@ -137,21 +132,42 @@ Data DeleteNode(TreeNode* bt,Data data){
       break;
 
     case Two:
+      printf("case Two\n");
       repNode = GetRight(delNode);
-      while(GetLeft(repNode)!=NULL)
+      Dir rep_dir = Right;
+      while(GetLeft(repNode)!=NULL){
         repNode = GetLeft(repNode);
-      if(GetRight(repNode)!=NULL)
-        swapNode(repNode,GetRight(repNode));
-      else
-        GetLeft(repNode->par) = NULL;
-      swapNode(repNode,delNode);
-      break;
+        rep_dir =Left;
+      }
+      if(rep_dir == Right){
+        delNode->right = repNode->right;
+        if(ChildNodeState(repNode)==One_Right)
+          repNode->right->par =delNode;
+      }
+      else{
+        printf("rep R -L node \n");
+        if(ChildNodeState(repNode)==One_Right){
+          repNode->par->left = repNode->right;
+          repNode->right->par = repNode->par;
+        }
+      }
 
+      swapNodeData(repNode,delNode);
+      if(bt==delNode)
+        bt = repNode;
+      else if(dir==Left)
+        GetLeft(delNode->par) = repNode;
+      else
+        GetRight(delNode->par) = repNode;
+
+      free(repNode);
+      return delData;
+      break;
   }
-  if(dir==Left)
+/*  if(dir==Left)
     printf("DIR LEFT");
   if(dir==Right)
-    printf("DIR RIGHT");
+    printf("DIR RIGHT");*/
   free(delNode);
 
   return delData;
@@ -168,6 +184,7 @@ void PreorderTraverse(TreeNode * bt){
   PreorderTraverse(GetLeft(bt));
   PreorderTraverse(GetRight(bt));
 }
+
 void InorderTraverse(TreeNode * bt){
   if(bt == NULL)
     return ;
@@ -175,6 +192,7 @@ void InorderTraverse(TreeNode * bt){
   printNode(bt);
   InorderTraverse(GetRight(bt));
 }
+
 void PostorderTraverse(TreeNode * bt){
   if(bt == NULL)
     return ;

@@ -19,7 +19,11 @@ int main(void){
  InorderTraverse(root);
  printf("\n" );
  //printNode(SearchNode(root,3,Left));
- DeleteNode(root,8);
+ printf("delete : %d\n",DeleteNode(root,10));
+ InorderTraverse(root);
+ printf("delete : %d\n",DeleteNode(root,1));
+ InorderTraverse(root);
+ printf("delete : %d\n",DeleteNode(root,5));
  InorderTraverse(root);
  //free(root);
 }
