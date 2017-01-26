@@ -29,7 +29,7 @@ node* root;
 void init_splay();
 void search(int);
 void insert(int);
-node* delete(int);
+int delete(int);
 boolean isEmpty();
 void print_splay();
 

@@ -25,8 +25,14 @@ void main() {
 	printf("%d",root->key);
 	print_splay(root);
 
-	search(1);
-	sprint
-	search(7);
+//	search(1);
+//	sprint
+//	search(7);
+//	sprint
+
+//	delete(100);
+//	sprint;
+	puts("///");		
+	delete(11);
 	sprint
 }

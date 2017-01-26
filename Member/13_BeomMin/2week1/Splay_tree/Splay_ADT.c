@@ -88,4 +88,79 @@ void search(int k) {
 		}
 		
 	}
+}
+
+int delete(int k) {
+	node* removeNode = root;
+	while(1) {
+		if (removeNode->key == k) {
+			break;
+		}
+		else if(removeNode->key > k) {
+			if(removeNode->left == NULL) {
+				removeNode = NULL;
+				break;
+			}
+			else {
+			removeNode = removeNode->left;
+			}
+		}
+		else if(removeNode->key < k) {
+			if(removeNode->right == NULL) {
+				removeNode = NULL;
+				break;
+			}
+			else {
+				
+			removeNode = removeNode->right;
+			}
+		}
+	}
+	if (removeNode == NULL) {
+		puts("not exist");
+		exit(1);
+	}
+	else {
+		if(removeNode != root) {
+		splay(removeNode);
+		}
+		node* replaceNode = root->left;
+		while(replaceNode->right != NULL) {
+			replaceNode = replaceNode->right;
+		}
+		node* splayNode = replaceNode->parent;
+		int temp = removeNode->key;
+		
+		if(replaceNode->left == NULL) {
+		splayNode->right = NULL;
+		}
+		else {
+			splayNode->right = replaceNode->left;
+			replaceNode->left->parent = splayNode;
+		}
+		
+		replaceNode->parent = NULL;
+		if(removeNode->left == NULL) {
+			replaceNode->left = NULL;
+		}
+		else {
+			replaceNode->left = removeNode->left;
+			removeNode->left->parent = replaceNode;
+		}
+		if(removeNode->right == NULL) {
+			replaceNode->right = NULL;
+		}
+		else {
+			replaceNode->right = removeNode->right;
+			removeNode->right->parent = replaceNode;
+		}
+		
+		root = replaceNode;	
+		
+		splay(splayNode);
+		
+		free(removeNode);
+		return temp;
+		
+	}
 }	
