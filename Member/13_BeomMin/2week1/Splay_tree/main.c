@@ -24,4 +24,9 @@ void main() {
 	insert(11);
 	printf("%d",root->key);
 	print_splay(root);
+
+	search(1);
+	sprint
+	search(7);
+	sprint
 }

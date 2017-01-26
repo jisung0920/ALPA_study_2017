@@ -57,4 +57,35 @@ void print_splay(node* n) {
 		print_splay(n->right);
 	}
 }
+
+void search(int k) {
+	node* temp = root;
+	while(1) {
+		if(root->key == k) {	
+			break;
+		}
+		else if(temp->key == k) {
+			splay(temp);
+			break;
+		}
+		else if(temp->key < k) {
+			if (temp->right == NULL) {
+				splay(temp);
+				break;
+			}
+			else {
+			temp = temp->right;
+			}
+		}
+		else if(temp->key > k) {
+			if (temp->left == NULL) {
+				splay(temp);
+				break;
+			}
+			else {
+			temp = temp->left;
+			}
+		}
 		
+	}
+}	

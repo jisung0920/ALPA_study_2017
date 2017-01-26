@@ -8,6 +8,10 @@
 	y->left = NULL; \
 	y->right = NULL; \
 
+#define sprint \
+	printf("%d",root->key); \
+	 print_splay(root); \
+	puts(""); \
 
 
 
