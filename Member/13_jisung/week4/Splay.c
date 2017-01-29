@@ -2,9 +2,10 @@
 void InitTree(Tree *tree){
   tree = NULL;
 }
-void MakeTree(Tree* tree){
-  tree = malloc(sizeof(Tree));
+Tree* MakeTree(void){
+  Tree* tree = malloc(sizeof(Tree));
   InitTree(tree);
+  return tree;
 }
 
 void Zig_L(Node* x){
@@ -58,14 +59,14 @@ void Zig_Zag_LR(Node* node){
 
 void ZigZag(Tree* tree,Node* node){
   Node* root = tree->root;
-  while(node != root){
-    if(node == root)
-      return ;
-    else if(node == root->left)
-      Zig_R(node);
-    else if(node == root->right)
-      Zig_L(node);
-    else{
+  if(node == root)
+    ;
+  else if(node == root->left)
+    Zig_R(node);
+  else if(node == root->right)
+    Zig_L(node);
+  else{
+    while(node != root){
       Node* target = node->par->par;
       if(node == target->left->left)
         Zig_Zig_R(node);
@@ -75,19 +76,40 @@ void ZigZag(Tree* tree,Node* node){
         Zig_Zag_LR(node);
       else
         Zig_Zag_RL(node);
+      }
     }
-  }
+  tree->root = node;
+  node->par = NULL;
 }
 
-Node* S_SearchNode(Tree* tree,Data data,Dir *dir){
-  Node* node = SearchNode(tree->root,data,dir);
-  ZigZag(tree,node);
-  return node;
+Node* S_SearchNode(Tree* tree,Data data){
+  Node* comNode = tree->root;
+  Node* nearNode = comNode;
+  while(comNode->data != data || comNode != NULL){
+    nearNode = comNode;
+    if(comNode->data>data)
+      comNode = GetLeft(comNode);
+    else
+      comNode = GetRight(comNode);
+  }
+  if(comNode->data == data)
+    return comNode;
+  else
+    return nearNode;
 }
+
+Node* SearchTree(Tree* tree,Data data){
+  Node* target = S_SearchNode(tree, data);
+  ZigZag(tree,target);
+  return target;
+}
+
 void InsertTree(Tree* tree,Node *node){
   InsertNode(tree->root,node);
-  //ZigZag(tree,node);
+  ZigZag(tree,node);
 }
-Data DeleteTree(Tree* bt,Data data){
-  return data;
+Data DeleteTree(Tree* tree,Data data){
+  Data delData = DeleteNode(tree->root,data);
+  SearchTree(tree,data);
+  return delData;
 }

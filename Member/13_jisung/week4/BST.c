@@ -13,6 +13,7 @@ Node * MakeNode(Data data){
   return node;
 }
 
+
 Data GetData(Node * bt){
   return bt->data;
 }

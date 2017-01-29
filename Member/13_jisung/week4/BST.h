@@ -18,7 +18,7 @@ typedef struct Node{
 
 
 void InitNode(Node *bt);
-Node * MakeNode(Data data);
+Node* MakeNode(Data data);
 Data GetData(Node * bt);
 void SetData(Node * bt, Data data);
 
