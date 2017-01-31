@@ -11,7 +11,7 @@ Tree* MakeTree(void){
 }
 
 Node* Zig_L(Node* bt){
-  printf("Rotate Left %d\n",bt->right->data);
+  printf("Rotate L\n");
   Node* pnode = bt;
   Node* cnode = pnode->right;
   if(ChildNodeState(cnode) == Zero ||ChildNodeState(cnode) ==One_Right)
@@ -24,7 +24,7 @@ Node* Zig_L(Node* bt){
 }
 
 Node* Zig_R(Node* bt){
-    printf("Rotate Right %d\n",bt->left->data);
+  printf("Rotate R\n");
   Node* pnode = bt;
   Node* cnode = pnode->left;
   if(ChildNodeState(cnode) == Zero ||ChildNodeState(cnode) ==One_Left)
@@ -36,39 +36,63 @@ Node* Zig_R(Node* bt){
   return cnode;
 }
 
-Node* Zig_Zig_L( Node* node){
-  printf("LL\n");
-  node->right = Zig_L(node->right);
-  node = Zig_L(node);
-  return node;
+Node* Zig_Zig_L(Node* z){
+  printf("Rotate LL\n");
+  Node* y = z->right;
+  Node* x = y->right;
+  z->right = y->left;
+  y->left = z;
+  y->right = x->left;
+  x->left = y;
+  z->par = y;
+  y->par = x;
+
+  return x;
 }
-Node* Zig_Zig_R( Node* node){
-  printf("RR\n");
-  node->left = Zig_R(node->left);
-  node = Zig_R(node);
-  return node;
+Node* Zig_Zig_R( Node* z){
+  printf("Rotate RR\n");
+  Node* y = z->left;
+  Node* x = y->left;
+  z->left = y->right;
+  y->right = z;
+  y->left = x->right;
+  x->right = y;
+  z->par = y;
+  y->par = x;
+  return x;
 }
 
-Node* Zig_Zag_RL(Node* node){
-  printf("RL\n");
-  node->right->left = Zig_R(node->right->left);
-  node = Zig_L(node);
-  return node;
+Node* Zig_Zag_RL(Node* z){
+  printf("Rotate RL\n");
+  Node* y = z->right;
+  Node* x = y->left;
+  z->right = x->left;
+  y->left = x->right;
+  x->left = z;
+  x->right = y;
+  z->par = x;
+  y->par = x;
+  return x;
 }
 
-Node* Zig_Zag_LR(Node* node){
-  printf("LR\n");
-  node->left = Zig_L(node->left);
-  printf("LR - 2nd\n");
-  node = Zig_R(node);
-  return node;
+Node* Zig_Zag_LR(Node* z){
+  printf("Rotate LR\n");
+  Node* y = z->left;
+  Node* x = y->right;
+  z->left = x->right;
+  y->right = x->left;
+  x->right = z;
+  x->left = y;
+  z->par = x;
+  y->par = x;
+  return x;
 }
 
 void ZigZag(Tree* tree,Node* node){
-  printf("Zig Zag Function :%d\n",node->data);
+
   Node* Root = tree->root;
   while(1){
-    if(tree->root == node)
+    if(Root == node)
       break;
     else if(Root->left == node){
       tree->root = Zig_R(node->par);
@@ -78,11 +102,11 @@ void ZigZag(Tree* tree,Node* node){
       tree->root= Zig_L(node->par);
       break;
     }
-    else{
-      printf("else Case\n");
-      Node* Gnode = node->par->par;
 
-      printf("Gnode data : %d\n",Gnode->data);
+
+
+    else{
+      Node* Gnode = node->par->par;
       if(Gnode == tree->root){
         if(Gnode->left == node->par){
           if(node->par->left == node)
@@ -99,7 +123,12 @@ void ZigZag(Tree* tree,Node* node){
         tree->root = Gnode;
         break;
       }
-      else{
+
+      else{// 문제가 있다
+        int i=0;
+        Node* connect = Gnode->par;
+        if(connect->left == Gnode)
+          i=1;
         if(Gnode->left == node->par){
           if(node->par->left == node)
             Gnode = Zig_Zig_R(Gnode);
@@ -113,6 +142,13 @@ void ZigZag(Tree* tree,Node* node){
             Gnode = Zig_Zig_L(Gnode);
         }
 
+        if(i)
+          connect->left = Gnode;
+        else
+          connect->right = Gnode;
+        Gnode->par =connect;
+
+        node =Gnode;
       }
 
     }
@@ -122,31 +158,40 @@ void ZigZag(Tree* tree,Node* node){
 Node* S_SearchNode(Tree* tree,Data data){
   Node* comNode = tree->root;
   Node* nearNode = comNode;
-  while(comNode->data != data || comNode != NULL){
+  while(comNode != NULL){
     nearNode = comNode;
-    if(comNode->data>data)
+    if(comNode->data == data)
+      return comNode;
+    else if(comNode->data>data)
       comNode = GetLeft(comNode);
     else
       comNode = GetRight(comNode);
   }
-  if(comNode->data == data)
-    return comNode;
-  else
-    return nearNode;
+  return nearNode;
+
 }
 
 Node* SearchTree(Tree* tree,Data data){
+  printf("Search : %d\n",data);
   Node* target = S_SearchNode(tree, data);
+  if(target->data != data)
+    printf("near Node :%d\n",target->data);
   ZigZag(tree,target);
   return target;
 }
 
 void InsertTree(Tree* tree,Node *node){
+  printf("Insert : %d\n",node->data);
   InsertNode(tree->root,node);
   ZigZag(tree,node);
 }
-Data DeleteTree(Tree* tree,Data data){
+Data DeleteTree(Tree* tree,Data data){//error
+  printf("Delete : %d\n",data);
   Data delData = DeleteNode(tree->root,data);
   SearchTree(tree,data);
+  if(delData == NOTRETURN){
+    printf("no data\n");
+    return NOTRETURN;
+  }
   return delData;
 }

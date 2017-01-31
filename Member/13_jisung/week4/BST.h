@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define GetLeft(x) (x->left)
 #define GetRight(x) (x->right)
+#define NOTRETURN -100
 
 typedef int Data;
 typedef enum{false,true} boolean;

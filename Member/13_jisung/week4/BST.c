@@ -102,7 +102,7 @@ Data DeleteNode(Node* bt,Data data){
   Node* delNode = SearchNode(bt,data,&dir);
 
   if(delNode==NULL)
-    exit(1);
+    return NOTRETURN;
 
   delData = delNode->data;
   Node* parNode = delNode->par;
