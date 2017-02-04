@@ -1,0 +1,60 @@
+﻿Revert "Revert ".""
+
+This reverts commit e95221ce87035a896eee7930acc5052ef31aa6d0.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   Member/13_jisung/.metadata/.log
+#	modified:   Member/13_jisung/.metadata/.plugins/org.eclipse.cdt.core/.log
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/10/30befdefa4dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/1c/a09ee56fa6dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/1e/10623dbda5dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/29/50ded405a5dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/2c/404840bda5dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/7a/d0c63000a5dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/89/a0911cc4a5dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/8d/c0c6593ba6dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/92/f0bf0c6ea6dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/ac/e090de67a6dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/db/809c2502a6dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/e0/f0ca0434a6dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/e6/30b981a7a5dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.history/f2/50b5232fa6dc00161d80eb746c6bbede
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.syncinfo.snap
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/week1_Topcoder/.markers.snap
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/week1_Topcoder/.syncinfo.snap
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/week2_Topcoder/.indexes/af/history.index
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/week2_Topcoder/.indexes/e4/92/history.index
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/week2_Topcoder/.markers.snap
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.projects/week2_Topcoder/.syncinfo.snap
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap
+#	renamed:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.root/4.tree -> Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.root/6.tree
+#	modified:   Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+#	deleted:    Member/13_jisung/.metadata/.plugins/org.eclipse.core.resources/2.snap
+#	modified:   Member/13_jisung/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+#	modified:   Member/13_jisung/.metadata/.plugins/org.eclipse.jdt.core/1896882696.index
+#	modified:   Member/13_jisung/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
+#	modified:   Member/13_jisung/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties
+#	modified:   Member/13_jisung/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
+#	modified:   Member/13_jisung/.metadata/version.ini
+#	new file:   "Member/13_jisung/linux/09_18\352\260\225.docx"
+#
+# Changes not staged for commit:
+#	modified:   Member/13_jisung/week4/Test
+#	deleted:    "Notice/1\354\233\224/ALPA_\354\225\214\352\263\240\353\246\254\354\246\230_01\354\233\224_1\354\243\274.zip"
+#	deleted:    "Notice/1\354\233\224/ALPA_\354\225\214\352\263\240\353\246\254\354\246\230_01\354\233\224_1\354\243\274_\355\225\264\354\204\244.zip"
+#	deleted:    "Notice/1\354\233\224/ALPA_\354\225\214\352\263\240\353\246\254\354\246\230_01\354\233\224_2\354\243\274.zip"
+#	deleted:    "Notice/1\354\233\224/ALPA_\354\225\214\352\263\240\353\246\254\354\246\230_02\354\233\224_1\354\243\274.zip"
+#	deleted:    "Notice/1\354\233\224/ALPA_\354\225\214\352\263\240\353\246\254\354\246\230_02\354\233\224_2\354\243\274.zip"
+#	deleted:    "Notice/1\354\233\224/ALPA_\354\225\214\352\263\240\353\246\254\354\246\230_02\354\233\224_3\354\243\274.zip"
+#
+# Untracked files:
+#	"Notice/2\354\233\224/"
+#	"Notice/\354\225\214\352\263\240\353\246\254\354\246\230/"
+#
+
