@@ -1,0 +1,10 @@
+package Palindrome;
+
+public class ThePalindrome {
+
+	public int find(String s){
+		int count=0;
+		
+		return count
+	}
+}

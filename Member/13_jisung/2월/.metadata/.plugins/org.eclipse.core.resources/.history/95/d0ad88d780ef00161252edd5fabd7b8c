@@ -1,0 +1,24 @@
+package Palindrome;
+
+public class ThePalindrome {
+	
+	public static String reverseString(String s) {
+	    return ( new StringBuffer(s) ).reverse().toString();
+	  }
+	
+	public int find(String s){
+		int count=s.length();
+		String a = reverseString(s);
+		String b = s;
+		for(int i=0;i<s.length();i++){
+			System.out.println(b);
+			System.out.println(a);
+			if(a==b)
+				break;
+			b = s+ s.substring(0,i);
+			a = reverseString(b);
+			count++;
+		}
+		return count;
+	}
+}

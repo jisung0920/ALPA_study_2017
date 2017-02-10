@@ -1,0 +1,20 @@
+package interdigit;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class interestingDigit {
+
+	public int[] digits(int base){
+		base--;
+		ArrayList<Integer> arr = new ArrayList<Integer>();
+		while(base>1){
+			arr.add(base);
+			if(base==(int)Math.pow(Math.sqrt((double)base),2))
+				base = (int)Math.sqrt(base);
+		}
+		arr.sort(null);
+		arr.toArray();
+		return arr;
+	
+}

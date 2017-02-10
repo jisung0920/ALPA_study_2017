@@ -1,0 +1,12 @@
+package interdigit;
+
+public class interestingDigit {
+
+	public int[] digits(int base){
+		int n[] = {base-1};
+		double m = Math.sqrt((double) n[0]);
+		if(n[0] == (int)(m*m))
+			n[1] =(int)m;
+		return n;
+	}
+}

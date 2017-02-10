@@ -1,0 +1,14 @@
+package interdigit;
+
+public class digitMain {
+
+	public static void main(String[] args) {
+
+
+		interestingDigit i = new interestingDigit();
+		int b = 10;
+		int n[] = i.digits(b);
+		n.toString();
+	}
+
+}

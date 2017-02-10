@@ -1,0 +1,18 @@
+package interdigit;
+
+import java.awt.List;
+import java.util.ArrayList;
+
+public class interestingDigit {
+
+	public int[] digits(int base){
+		
+		int[] arr = {--base,-1,-1};
+		for(int i=1;i<3;i++)
+			if(base==(int)Math.pow(Math.sqrt((double)base),2))
+				base = (int)Math.sqrt(base);
+		return arr;
+	}
+	
+		
+}

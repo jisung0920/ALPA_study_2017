@@ -1,0 +1,15 @@
+package interdigit;
+
+public class digitMain {
+
+	public static void main(String[] args) {
+
+
+		interestingDigit i = new interestingDigit();
+		int b = 10;
+		int n[] = i.digits(b);
+		System.out.println(n[0]+" and "+n[1]);
+		
+	}
+
+}
